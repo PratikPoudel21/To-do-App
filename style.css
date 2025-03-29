@@ -1,0 +1,204 @@
+:root {
+    --progressBarHeight: 7px;
+    --progressBarRadius: 15px;
+    --progressCountSize: 70px;
+    --background: #000430;
+    --secondaryBackground: #571e78;
+    --inputBackground: #171c48;
+    --text: #fff;
+    --purple: #838dff;
+    --teal: #24feee;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background-color: #282828;
+}
+
+.container {
+    width: 100%;
+    max-width: 350px;
+    padding: 20px;
+    margin: 100px auto 0px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: var(--background);
+    color: var(--text);
+}
+
+.container .progress {
+    display: grid;
+    grid-template-columns: 1fr 0.5fr;
+    margin: 10px 0;
+    padding: 20px;
+    border-radius: 20px;
+    border: 2px solid var(--purple);
+}
+
+.container .progress .progress-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.container .progress .progress-left .progress-bar {
+    display: inline-block;
+    height: var(--progressBarHeight);
+    width: 12em;
+    background-color: var(--secondaryBackground);
+    border-radius: var(--progressBarRadius);
+    position: relative;
+}
+
+.container .progress .progress-left .progress-bar .progres {
+    position: absolute;
+    height: var(--progressBarHeight);
+    background-color: var(--purple);
+    border-radius: var(--progressBarRadius);
+}
+
+.container .progress .progress-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.container .progress .progress-right .progress-count {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--progressCountSize);
+    height: var(--progressCountSize);
+    background-color: var(--purple);
+    font-weight: 700;
+    border-radius: 50%;
+    font-size: 40px;
+}
+
+.container .input {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    margin: 20px 0 5px;
+}
+
+.container .input .add-Todo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 270px;
+}
+
+.container .input .add-Todo input {
+    height: 30px;
+    border-radius: 10px;
+    background-color: var(--inputBackground);
+    color: var(--text);
+    width: 17em;
+    outline: none;
+    border: none;
+    font-size: 17px;
+    padding: 0px 5px;
+    position: relative;
+}
+
+.container .input .add-Todo input:focus {
+    border: 2px solid;
+}
+
+.container .input .add-Todo .add {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--purple);
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.container .input .controls {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container .input .controls .control {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 20px;
+}
+
+.container .input .controls .control span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 27px;
+    cursor: pointer;
+}
+
+.container .input .controls .control .selected {
+    border-bottom: 1px solid var(--purple);
+    color: var(--purple);
+}
+
+.container .input .controls .clear {
+    height: 27px;
+    width: 75px;
+    border-radius: 8px;
+    border: none;
+    background-color: var(--purple);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.container .to-dos {
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.container .to-dos ul {
+    display: grid;
+    gap: 10px;
+}
+
+.container .to-dos ul .to-do {
+    list-style: none;
+    border: 1px solid grey;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    padding: 6px;
+    position: relative;
+}
+
+.container .to-dos ul .to-do .fa-xmark {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .to-dos ul .to-do input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.container .to-dos ul .to-do input[type="checkbox"]:checked + label {
+    text-decoration: line-through;
+    color: grey;
+}
