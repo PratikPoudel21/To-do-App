@@ -127,10 +127,6 @@ class todoApp {
         if(filteredTodos.size !== 0) { this.displayTodos(filteredTodos); }
         else if (type === "completed") { this.root.innerHTML = "You haven't completed any tasks yet."; }
         else if (type === "pending") { this.root.innerHTML = "No pending tasks."; }
-    }  
-    
-    setDefault() {
-
     }
     
     todosCompleted() {
